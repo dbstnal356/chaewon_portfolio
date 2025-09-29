@@ -66,7 +66,7 @@ $(function () {
        
 
         // Email copy on click
-        document.querySelectorAll('.info-value').forEach(item => {
+        document.querySelectorAll('#info-copy').forEach(item => {
             item.addEventListener('click', function(e) {
                 if (this.tagName !== 'A') {
                     const text = this.textContent;
