@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ok">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OAK&ON홈페이지</title>
+    <script
+      src="https://kit.fontawesome.com/5480f16be7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-simplyscroll/2.1.1/jquery.simplyscroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- ✅ 추가된 GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+    <!-- ✅ 반드시 main.js보다 위에 있어야 함 -->
+    <script src="js/furniture.js"></script>
+    <!-- Splitting.js -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/splitting/dist/splitting.css"
+    />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <!-- Phosphor Icons -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/phosphor-icons@1.4.2/src/css/icons.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700;800;900&family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/furniture.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1 class="logo"><a href="#">Oak & on</a></h1>
+      <nav class="quick">
+       
+        <button aria-label="search" class="icon-btn">
+          <i class="ph-light ph-magnifying-glass"></i>
+        </button>
+        <button aria-label="cart" class="icon-btn">
+          <i class="ph-light ph-shopping-cart-simple"></i>
+        </button>
+        <button aria-label="account" class="icon-btn">
+          <i class="ph-light ph-user"></i>
+        </button>
+         <button aria-label="menu" class="icon-btn">
+          <i class="ph-light ph-list"></i>
+        </button>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section class="con1">
+        <div class="inner">
+          <div class="bg_txt" aria-hidden="true">ROUNDED</div>
+
+          <!-- Chair visual -->
+          <div class="visual">
+            <img
+              src="./img/con1_img1.png"
+              alt="Oak & on signature lounge chair"
+            />
+          </div>
+
+          <!-- Back view card -->
+          <aside class="back_vedio" aria-label="product back view">
+            <div class="thumb">
+              <video
+                autoplay
+                muted
+                loop
+                playsinline
+                src="./img/con1_video.mp4"
+                alt="back view"
+              ></video>
+            </div>
+            <!-- //.thumb -->
+            <div class="caption">back view</div>
+          </aside>
+
+          <!-- Text  -->
+          <div class="txt_box1">
+            <p class="eyebrow">Oak & On signature lounge</p>
+            <h2 class="ko">오크앤온 시그니처 라운지</h2>
+
+            <a class="cta" href="#">
+              <span>Shop Now</span>
+              <i class="ph ph-arrow-right"></i>
+            </a>
+          </div>
+          <!-- //.txt_box1 -->
+        </div>
+        <!-- //.inner -->
+      </section>
+      <!-- //.con1 -->
+      <section class="con2">
+        <div class="inner">
+          <div class="con2_box">
+            <h2>FURNITURE</h2>
+            <div class="img_box swiper mySwiper">
+              <ul class="products swiper-wrapper" role="list">
+                <li class="card swiper-slide">
+                  <button class="fav" aria-label="찜하기" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                      />
+                    </svg>
+                  </button>
+                  <div class="media">
+                    <img src="./img/con2_img1.png" alt="Chevron Oak Cabinet" />
+                  </div>
+                  <h3 class="title">Chevron Oak Cabinet</h3>
+                </li>
+
+                <li class="card swiper-slide">
+                  <button class="fav" aria-label="찜하기" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                      />
+                    </svg>
+                  </button>
+                  <div class="media">
+                    <img
+                      src="./img/con2_img2.png"
+                      alt="Walnut Tulip Dining Table"
+                    />
+                  </div>
+                  <h3 class="title">Walnut&nbsp; Tulip Dining Table</h3>
+                </li>
+
+                <li class="card swiper-slide">
+                  <button class="fav" aria-label="찜하기" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                      />
+                    </svg>
+                  </button>
+                  <div class="media">
+                    <img
+                      src="./img/con2_img3.png"
+                      alt="Chevron walnut Cabinet"
+                    />
+                  </div>
+                  <h3 class="title">Chevron walnut Cabinet</h3>
+                </li>
+
+                <li class="card swiper-slide">
+                  <button class="fav" aria-label="찜하기" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                      />
+                    </svg>
+                  </button>
+                  <div class="media">
+                    <img src="./img/con2_img4.png" alt="Rounded Oak Lounge" />
+                  </div>
+                  <h3 class="title">Rounded Oak Lounge Chair</h3>
+                </li>
+                <li class="card swiper-slide">
+                  <button class="fav" aria-label="찜하기" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                      />
+                    </svg>
+                  </button>
+                  <div class="media">
+                    <img src="./img/con2_img5.png" alt="Rounded Oak Lounge" />
+                  </div>
+                  <h3 class="title">Sculpted Oak Pedestal Table</h3>
+                </li>
+                <li class="card swiper-slide">
+                  <button class="fav" aria-label="찜하기" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                      />
+                    </svg>
+                  </button>
+                  <div class="media">
+                    <img src="./img/con2_img6.png" alt="Rounded Oak Lounge" />
+                  </div>
+                  <h3 class="title">Cloud Bouclé Oak Armchair</h3>
+                </li>
+                <li class="card swiper-slide">
+                  <button class="fav" aria-label="찜하기" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                      />
+                    </svg>
+                  </button>
+                  <div class="media">
+                    <img src="./img/con2_img7.png" alt="Rounded Oak Lounge" />
+                  </div>
+                  <h3 class="title">Serif Arc Chaise</h3>
+                </li>
+                <li class="card swiper-slide">
+                  <button class="fav" aria-label="찜하기" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                      />
+                    </svg>
+                  </button>
+                  <div class="media">
+                    <img src="./img/con2_img8.png" alt="Rounded Oak Lounge" />
+                  </div>
+                  <h3 class="title">Mosswood Lounge Chair</h3>
+                </li>
+                <li class="card swiper-slide">
+                  <button class="fav" aria-label="찜하기" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                      />
+                    </svg>
+                  </button>
+                  <div class="media">
+                    <img src="./img/con2_img9.png" alt="Rounded Oak Lounge" />
+                  </div>
+                  <h3 class="title">Cove Panel Sofa</h3>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- //.con2_box -->
+        </div>
+        <!-- //.inner -->
+      </section>
+      <!-- con2 -->
+      <section class="con3">
+        <div class="inner">
+          <div class="container grid">
+            <!-- Left: copy + minis + CTA -->
+            <div class="col copy">
+              <h2>OAK LIVING</h2>
+              <p class="ko">오크 리빙</p>
+              <p class="en">
+                Rounded forms and oak grain catch the morning light, bringing
+                textures into crisp relief and delivering both cozy comfort and
+                tidy storage.
+              </p>
+              <p class="ko small">
+                둥근 형태와 오크의 나뭇결이 아침빛을 받아 질감은 또렷이
+                드러나며, 포근한 착석과 정돈된 수납을 함께 선사합니다.
+              </p>
+
+              <div class="wrap">
+                <div class="row">
+                  <div class="stack">
+                    <img src="./img/con3_img2.png" alt="Rounded lounge chair" />
+                  </div>
+                  <div class="stack">
+                    <img src="./img/con3_img3.png" alt="Sideboard" />
+                  </div>
+                </div>
+              </div>
+              <!-- //.wrap -->
+
+              <a href="#" class="ctas">
+                <span>View more</span>
+                <i class="ph ph-arrow-right"></i>
+              </a>
+            </div>
+
+            <!-- Right: big visual card -->
+            <figure class="col visual_img">
+              <img src="./img/con3_img1.png" alt="Oak living room scene" />
+            </figure>
+          </div>
+        </div>
+        <!-- //.inner -->
+      </section>
+      <!-- //.con3 -->
+
+      <section class="con4">
+        <div class="inner">
+          <div class="container">
+            <div class="tok_img">
+              <img src="./img/con4_img1.png" alt="" />
+              <span><a href="#">View more</a></span>
+            </div>
+            <div class="tok_img">
+              <img src="./img/con4_img2.png" alt="" />
+              <span><a href="#">View more</a></span>
+            </div>
+            <div class="tok_img">
+              <img src="./img/con4_img3.png" alt="" />
+              <span><a href="#">View more</a></span>
+            </div>
+          </div>
+        </div>
+        <!-- //.inner -->
+      </section>
+      <!-- //.con4 -->
+      <section class="con5">
+        <div class="inner">
+          <div class="container">
+            <div class="sofa_img">
+              
+      <figure class="macro"><img src="./img/con5_img1.png" alt="패브릭 질감 확대"></figure>
+      <figure class="macro"><img src="./img/con5_img2.png"  alt="라텍스 충전재 확대"></figure>
+      <figure class="macro"><img src="./img/con5_img3.png"    alt="오크 베이스 확대"></figure>
+  
+    </div>
+          
+            <div class="sofa_txt">
+              <img src="./img/con_img5.png" alt="">
+            </div>
+          </div>
+          <!-- //.container -->
+        </div>
+        <!-- //.inner -->
+      </section>
+      <!-- //.con5 -->
+
+      <section class="con6">
+        <div class="inner">
+          <div class="brand_img">
+            <h3>Oak & on</h3>
+            <a href="#"><span>Brand Story</span></a>
+          </div>
+          <!-- //.brand_img -->
+        </div>
+        <!-- //.inner -->
+      </section>
+      <!-- //.con6 -->
+
+      <section class="con7">
+        <div class="inner">
+          <div class="icon_box">
+            <div class="chat_icon">
+              <a href="#" aria-label="고객 지원">
+                <div class="icon" aria-hidden="true">
+                  <img src="./img/chat icon.svg" alt="">
+                </div>
+                <span class="label">고객 지원</span>
+              </a>
+            </div>
+            <div class="chat_icon">
+              <a href="#" aria-label="매장 안내">
+                <div class="icon" aria-hidden="true">
+                  <img src="./img/map_icon.svg" alt="">
+                </div>
+                <span class="label">매장 안내</span>
+              </a>
+            </div>
+            <div class="chat_icon">
+              <a href="#" aria-label="공지상항">
+                <div class="icon" aria-hidden="true">
+                  <img src="./img/bell_icon.svg" alt="">
+                </div>
+                <span class="label">공지 사항</span>
+              </a>
+            </div>
+            <div class="chat_icon">
+              <a href="#" aria-label="가구 상품">
+                <div class="icon" aria-hidden="true">
+                  <img src="./img/armchair_icon.svg" alt="">
+                </div>
+                <span class="label">가구 상품</span>
+              </a>
+            </div>
+            <!-- chat_icon -->
+          </div>
+          <!-- //.icon_box -->
+        </div>
+        <!-- //.inner -->
+      </section>
+      <!-- //.con7 -->
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="grid">
+          <!-- 브랜드 & 소셜 -->
+          <section class="brand">
+            <h2 class="logo">Oak & on</h2>
+            <p class="tagline">나무의 온기들</p>
+            <ul class="social" aria-label="소셜 링크">
+              <li>
+                <a href="#" aria-label="Instagram" title="Instagram">
+                  <!-- Instagram icon -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5a5.5 5.5 0 1 1 0 11a5.5 5.5 0 0 1 0-11Zm0 2a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7Zm5.75-.75a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5Z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" aria-label="X(Twitter)" title="X">
+                  <!-- X icon -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M18.9 3H22l-7.1 8.1L23 21h-6.8l-5.3-6.3L4.8 21H2l7.6-8.7L1.5 3H8l4.8 5.7L18.9 3Zm-1.2 16h2.2L8.4 5H6.1l11.6 14Z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" aria-label="YouTube" title="YouTube">
+                  <!-- YouTube icon -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M23.5 7.1a4 4 0 0 0-2.8-2.8C18.7 3.7 12 3.7 12 3.7s-6.7 0-8.7.6A4 4 0 0 0 .5 7.1C0 9.1 0 12 0 12s0 2.9.5 4.9a4 4 0 0 0 2.8 2.8c2 0 8.7.6 8.7.6s6.7 0 8.7-.6a4 4 0 0 0 2.8-2.8c.5-2 .5-4.9.5-4.9s0-2.9-.5-4.9ZM9.6 15.2V8.8L15.8 12l-6.2 3.2Z"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </section>
+
+          <!-- 링크 & 고객센터 -->
+          <nav class="links" aria-label="푸터 링크">
+            <div class="link-col">
+              <h3>COMPANY</h3>
+              <ul>
+                <li><a href="#">회사 소개</a></li>
+                <li><a href="#">매장 안내</a></li>
+                <li><a href="#">회원가입</a></li>
+              </ul>
+            </div>
+            <div class="link-col">
+              <h3>SUPPORT</h3>
+              <ul>
+                <li><a href="#">고객센터</a></li>
+                <li><a href="#">교환/반품</a></li>
+                <li><a href="#">주문/배송 안내</a></li>
+                <li><a href="#">자주 묻는 질문</a></li>
+              </ul>
+            </div>
+            <div class="link-col">
+              <h3>INFO</h3>
+              <ul>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">사업자 정보</a></li>
+              </ul>
+            </div>
+            <div class="contact">
+              <h4>고객센터 전화문의 <span class="tel">1577-5670</span></h4>
+              <ul class="hours">
+                <li>평일 09:30 – 17:30 (점심 12:30 – 13:30)</li>
+                <li>토요일 09:30 – 12:30 (A/S 관련 상담만 진행)</li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <div class="legal">© 2025 Oak & on. All rights reserved.</div>
+      </div>
+    </footer>
+  </body>
+</html>
