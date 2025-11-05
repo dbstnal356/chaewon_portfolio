@@ -1,46 +1,60 @@
 $(function () { 
 
    // Custom Cursor
-        const cursor = document.querySelector('.custom-cursor');
-        let mouseX = 0, mouseY = 0;
-        let cursorX = 0, cursorY = 0;
+       const cursor = document.querySelector('.custom-cursor'); 
+let mouseX = 0, mouseY = 0;   // 실제 마우스 위치
+let cursorX = 0, cursorY = 0; // 커서(div) 위치
 
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX; // 마우스 X 좌표
+    mouseY = e.clientY; // 마우스 Y 좌표
+    /* 사용자가 마우스를 움직일 때마다 **목표 좌표(A)**를 갱신.
 
-        function animateCursor() {
-            cursorX += (mouseX - cursorX) * 0.1;
-            cursorY += (mouseY - cursorY) * 0.1;
-            cursor.style.left = cursorX + 'px';
-            cursor.style.top = cursorY + 'px';
-            requestAnimationFrame(animateCursor);
-        }
-        animateCursor();
+clientX/Y는 뷰포트(화면) 기준 좌표. */
+});
+
+function animateCursor() {
+    // 마우스 위치와 커서 위치의 차이를 10%만 이동 → 부드럽게 따라옴
+    cursorX += (mouseX - cursorX) * 0.1;
+    cursorY += (mouseY - cursorY) * 0.1;
+    /* (mouseX - cursorX) * 0.1 = LERP(선형 보간).
+“차이의 10%만큼” 이동 → 지연감을 가진 ‘스르륵’ 효과.
+
+0.1을 크게 하면 더 빨리 따라오고, 작게 하면 더 느리게 따라와요. */
+
+    // 커서 div 위치 갱신
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+
+    requestAnimationFrame(animateCursor); // 다음 프레임에서도 계속 실행
+}
+animateCursor();
 
         // Cursor Trail Effect
-        document.addEventListener('mousemove', (e) => {
-            const trail = document.createElement('div');
-            trail.className = 'cursor-trail';
-            trail.style.left = e.clientX + 'px';
-            trail.style.top = e.clientY + 'px';
-            document.body.appendChild(trail);
+       document.addEventListener('mousemove', (e) => {
+    const trail = document.createElement('div');  // 새로운 div 생성
+    trail.className = 'cursor-trail';             // CSS 스타일 적용
+    trail.style.left = e.clientX + 'px';          // 위치 = 마우스 좌표
+    trail.style.top = e.clientY + 'px';
+    document.body.appendChild(trail);             // body에 추가
 
-            setTimeout(() => {
-                trail.style.opacity = '1';
-                trail.style.transform = 'scale(1)';
-            }, 10);
+    // 아주 살짝 늦게 opacity/scale을 1로 → 나타나는 애니메이션
+    setTimeout(() => {
+        trail.style.opacity = '1';
+        trail.style.transform = 'scale(1)';
+    }, 10);
 
-            setTimeout(() => {
-                trail.style.opacity = '0';
-                trail.style.transform = 'scale(0)';
-            }, 300);
+    // 0.3초 뒤 opacity/scale을 0으로 → 사라지는 애니메이션
+    setTimeout(() => {
+        trail.style.opacity = '0';
+        trail.style.transform = 'scale(0)';
+    }, 300);
 
-            setTimeout(() => {
-                trail.remove();
-            }, 600);
-        });
+    // 0.6초 뒤 DOM에서 제거 → 메모리 낭비 방지
+    setTimeout(() => {
+        trail.remove();
+    }, 600);
+});
 
         // Background Grid Animation
         const bgAnimation = document.getElementById('bgAnimation');
